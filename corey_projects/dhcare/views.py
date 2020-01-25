@@ -81,6 +81,7 @@ def receptionui_get(request):
         if form.is_valid():
             nid = form.cleaned_data.get('nid')
             context = {
+                'value': 'true',
                 'appointments': appointment.objects.filter(nid=nid)
             }
 

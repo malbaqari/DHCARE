@@ -8,7 +8,6 @@
             <legend class="border-bottom mb-4">Patient Appointments</legend>
             {{ form|crispy }}
             {% if value %}
-            {% for appointment in appointments %}
             <table summary="no_orderDate">
                 <tr>
                     <th>Name</th>
@@ -17,16 +16,17 @@
                     <th>Time</th>
                     <th>Clinic</th>
                 <tr>
+                    {% for appointment in appointments %}
                     <td>{{ appointment.name }}</td>
                     <td>{{ appointment.nid }}</td>
                     <td>{{ appointment.date }}</td>
                     <td>{{ appointment.time }}</td>
                     <td>{{ appointment.department_code }}</td>
+                    {% endfor %}
                 </tr>
             </table>
             <br>
             <button class="btn btn-outline-info" type="submit">Confirm</button>
-            {% endfor %}
             {% else %}
             <button class="btn btn-outline-info" type="submit">Get</button>
             {% endif %}

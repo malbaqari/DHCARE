@@ -22,7 +22,7 @@ class provider(models.Model):
 
 class appointment(models.Model):
     name = models.CharField(max_length=100)
-    nid = models.IntegerField(unique=True, primary_key=True)
+    nid = models.IntegerField()
     date = models.DateField(default=timezone.now)
     time = models.TimeField(default=timezone.now)
 

@@ -1,0 +1,36 @@
+{% extends "dhcare/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Patient Appointments</legend>
+            {{ form|crispy }}
+            {% if appointments.nid %}
+            <table summary="no_orderDate">
+                <tr>
+                    <th>Name</th>
+                    <th>National ID</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Clinic</th>
+                    {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.name }}</td>
+                    <td>{{ appointment.nid }}</td>
+                    <td>{{ appointment.date }}</td>
+                    <td>{{ appointment.time }}</td>
+                    <td>{{ appointment.department_code }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </fieldset>
+        <button class="btn btn-outline-info" type="submit">Confirm</button>
+        {% else %}
+        </fieldset>
+        <button class="btn btn-outline-info" type="submit">Get</button>
+        {% endif %}
+    </form>
+</div>
+{% endblock content %}

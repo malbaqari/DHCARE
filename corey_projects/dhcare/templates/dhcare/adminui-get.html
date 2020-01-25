@@ -1,0 +1,24 @@
+{% extends "dhcare/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section" xmlns="http://www.w3.org/1999/html">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Hospital Information</legend>
+            {{ form|crispy }}
+            {% if provider.provider_name %}
+            <div class="text-dark">
+                <b> Hospital Name: </b>{{provider.provider_name}}<br><br>
+                <b> Hospital Web Address: </b>{{provider.provider_webAddress}}<br><br>
+            </div>
+            {% else %}
+            <div class="text-danger">
+                {{provider}}
+            </div>
+            {% endif %}
+        </fieldset>
+        <button class="btn btn-outline-info" type="submit">Get Info</button>
+    </form>
+</div>
+{% endblock content %}

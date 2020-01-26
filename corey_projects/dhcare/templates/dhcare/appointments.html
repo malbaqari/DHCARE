@@ -1,13 +1,13 @@
 {% extends "dhcare/base.html" %}
-{% load crispy_forms_tags %}
+{% load django_tables2 %}
 {% block content %}
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Patient Appointments</legend>
-            {{ form|crispy }}
-            <button class="btn btn-outline-info" type="submit">Get</button>
+            {% render_table table %}
+            <button class="btn btn-outline-info" type="submit">Confirm</button>
         </fieldset>
     </form>
 </div>

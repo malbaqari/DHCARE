@@ -6,6 +6,7 @@ from .custom_decorators import custom_user_passes_test
 from .dnsSC import dnsSC_get, dnsSC_post
 from .forms import getProviderInfo, submitProviderInfo, getAppointments, bookAppointment
 from .models import appointment
+from .tables import appointmentTable
 
 
 def home(request):
@@ -80,12 +81,9 @@ def receptionui_get(request):
         # check whether it's valid:
         if form.is_valid():
             nid = form.cleaned_data.get('nid')
-            context = {
-                'value': 'true',
-                'appointments': appointment.objects.filter(nid=nid)
-            }
+            table = appointmentTable(appointment.objects.filter(nid=nid))
 
-            return render(request, 'dhcare/receptionui-get.html', context)
+            return render(request, 'dhcare/appointments.html', {"table": table})
 
     else:
         form = getAppointments()

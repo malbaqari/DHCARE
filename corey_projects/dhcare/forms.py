@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import appointment
+from .models import appointment, fingerprints
 
 
 # By default DateInput takes input as string. Using this class, we can change the input as Calender
@@ -37,3 +37,25 @@ class bookAppointment(forms.ModelForm):
 
 class getAppointments(forms.Form):
     nid = forms.IntegerField(label='Patient National ID')
+
+
+class getFingerprint(forms.ModelForm):
+    class Meta:
+        model = fingerprints
+        fields = ['x', 'y']
+
+
+class submitRecords(forms.Form):
+    name = forms.CharField(label='Patient Name', max_length=100)
+    nid = forms.CharField(label='National ID', max_length=100)
+    nid = forms.CharField(label='National ID', max_length=100)
+    nid = forms.CharField(label='National ID', max_length=100)
+    nid = forms.CharField(label='National ID', max_length=100)
+    nid = forms.CharField(label='National ID', max_length=100)
+
+
+class newPatient(forms.Form):
+    name = forms.CharField(label='Patient Name', max_length=100)
+    nid = forms.CharField(label='National ID', max_length=100)
+    dob = forms.DateField(label='Date of Birth', widget=DateInput)
+    fingerprint = forms.CharField(label='Fingerprint', max_length=100)

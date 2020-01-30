@@ -1,0 +1,166 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_NID",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_description",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_hash",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_fingerprint",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_status",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_date",
+        "type": "string"
+      }
+    ],
+    "name": "createEhr",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_NID",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_DOB",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_fingerprint",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_OHP",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_receptionID",
+        "type": "string"
+      }
+    ],
+    "name": "createPatient",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_NID",
+        "type": "string"
+      }
+    ],
+    "name": "getEhr",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_description",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_hash",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_fingerprint",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_status",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_date",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_NID",
+        "type": "string"
+      }
+    ],
+    "name": "getPatient",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_DOB",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_fingerprint",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_OHP",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_receptionID",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

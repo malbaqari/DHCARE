@@ -7,7 +7,7 @@ class appointmentTable(tables.Table):
     department_code = tables.Column(verbose_name='Clinic')
     nid = tables.Column(verbose_name='National ID')
     # id = tables.Column(visible=False)
-    id = tables.CheckBoxColumn()
+    id = tables.CheckBoxColumn(accessor='id')
 
     class Meta:
         model = appointment

@@ -32,3 +32,25 @@ class appointment(models.Model):
 
     def __str__(self):
         return self.name
+
+
+FINGERPRINT_CHOICES_X = (
+    (1, 3.11),
+    (2, 4.11),
+    (3, 3.05),
+    (4, 4.21)
+)
+FINGERPRINT_CHOICES_Y = (
+    (1, 3.11),
+    (2, 4.11),
+    (3, 3.05),
+    (4, 4.21)
+)
+
+
+class fingerprints(models.Model):
+    x = models.IntegerField(choices=FINGERPRINT_CHOICES_X, default=1)
+    y = models.IntegerField(choices=FINGERPRINT_CHOICES_Y, default=1)
+
+    def __str__(self):
+        return self.x

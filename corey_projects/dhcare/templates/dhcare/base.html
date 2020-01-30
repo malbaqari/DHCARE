@@ -41,7 +41,7 @@
                     <a class="nav-item nav-link" href="{% url 'adminui' %}">Admin</a>
                     {% endif %}
                     {% if 'DHCARE-Doctors' in user.groups.all.0.name %}
-                    <a class="nav-item nav-link" href="{% url 'adminui' %}">Doctor</a>
+                    <a class="nav-item nav-link" href="{% url 'doctorui' %}">Doctor</a>
                     {% endif %}
                     {% if 'DHCARE-Reception' in user.groups.all.0.name %}
                     <a class="nav-item nav-link" href="{% url 'receptionui' %}">Appointments</a>
